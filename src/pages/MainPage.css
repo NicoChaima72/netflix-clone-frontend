@@ -1,0 +1,9 @@
+.main__container {
+  top: -3.5rem;
+}
+
+@media (min-width: 768px) {
+  .main__container {
+    top: -20vh;
+  }
+}

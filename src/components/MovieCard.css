@@ -1,0 +1,29 @@
+.movieCard {
+  cursor: pointer;
+  transition: 0.1s all ease;
+  position: relative;
+
+  /* overflow: hidden; */
+}
+
+.movieCard:hover {
+  transform: scale(1.1);
+}
+
+/* .movieCard:before {
+  display: block;
+  content: "";
+  padding-top: 50%;
+}
+
+.movieCard img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+} */
+
+.movieCard img {
+  aspect-ratio: 6/9;
+}

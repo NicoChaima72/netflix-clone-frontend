@@ -1,0 +1,31 @@
+@import "react-alice-carousel/lib/alice-carousel.css";
+
+.alice-carousel {
+  position: relative;
+}
+
+.alice-carousel__dots {
+  display: none;
+}
+
+.alice-carousel__stage-item {
+  margin: 0 0.2rem;
+}
+
+.alice-carousel__prev-btn-item {
+  position: absolute;
+  color: white !important;
+  font-size: 2.3rem;
+  left: 10px;
+  top: 50%;
+  transform: translate(0, -70%);
+}
+
+.alice-carousel__next-btn-item {
+  position: absolute;
+  color: white !important;
+  font-size: 2.3rem;
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -70%);
+}

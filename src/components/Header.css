@@ -1,0 +1,26 @@
+.header {
+  height: 80vh;
+  width: 100%;
+  min-height: 600px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 110vh;
+    min-height: 650px;
+  }
+}
+
+.header__title {
+  font-family: "Secular One", helvetica !important;
+}
+
+.header__info {
+  top: 50%;
+}
+
+@media (min-width: 768px) {
+  .header__info {
+    transform: translate(0, -50%);
+  }
+}
