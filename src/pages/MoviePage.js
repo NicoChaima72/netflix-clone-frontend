@@ -65,7 +65,7 @@ const MoviePage = () => {
             className="moviePage__info relative mx-3 md:mx-20 lg:mx-48 p-4 md:p-10 shadow-xl rounded-lg text-white"
             style={{ backgroundColor: "#141414" }}
           >
-            <div className="flex justify-between  items-center">
+            <div className="flex justify-between  items-start">
               <h2 className="text-xl font-semibold">{movie.title}</h2>
               <BookmarkBorderIcon></BookmarkBorderIcon>
             </div>
@@ -81,6 +81,17 @@ const MoviePage = () => {
               <div className="flex space-x-1 items-center">
                 <PeopleIcon></PeopleIcon>
                 <p>{movie.vote_count}</p>
+              </div>
+            </div>
+
+            <div className="mt-7">
+              <h5 className="font-medium">Generos</h5>
+              <div className="flex space-x-2 mt-2">
+                {movie.genres.map((genre) => (
+                  <p className="bg-slate-800 rounded-full text-xs py-2 px-4">
+                    {genre.name}
+                  </p>
+                ))}
               </div>
             </div>
 
