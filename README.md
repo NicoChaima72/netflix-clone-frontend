@@ -1,8 +1,8 @@
 # Netflix clone
 
-Aplicacion de peliculas con interfaz de Netflix, puedes ver su informacion y buscar tus peliculas favoritas, cuenta con la API The Movie Database
+Movie application with Netflix interface, you can see your information and search for your favorite movies, it has the API The Movie Database
 
-## Tecnologías
+## Technologies
 
 ---
 
@@ -16,9 +16,9 @@ Aplicacion de peliculas con interfaz de Netflix, puedes ver su informacion y bus
 
 ---
 
-Para correr este proyecto, primero debes crear un archivo `/.env` en la raíz del proyecto con la estructura de `.env.example`
+To run this project, you must first create a _`/.env`_ file in the root of the project with the structure of _`.env.example`_
 
-Luego de eso solo tienes que escribir
+After that you just have to write on the console
 
     $ npm install
     $ npm start
