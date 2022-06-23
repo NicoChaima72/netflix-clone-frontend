@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import StarIcon from "@mui/icons-material/Star";
 import PeopleIcon from "@mui/icons-material/People";
+import HomeIcon from "@mui/icons-material/Home";
 
 import "./MoviePage.css";
 import { useParams } from "react-router-dom";
@@ -40,18 +40,19 @@ const MoviePage = () => {
         <div>
           <div
             className="moviePage__image"
+            id="movie-background"
             style={{
               background: `linear-gradient(
             to bottom,
+            rgba(20, 20, 20, 0.9),
             rgba(20, 20, 20, 0.8),
-            rgba(20, 20, 20, 0.6),
-            rgba(20, 20, 20, 0.4),
-            rgba(20, 20, 20, 0.4),
-            rgba(20, 20, 20, 0.4),
-            rgba(20, 20, 20, 0.4),
-            rgba(20, 20, 20, 0.4),
-            rgba(20, 20, 20, 0.6),
+            rgba(20, 20, 20, 0.7),
+            rgba(20, 20, 20, 0.7),
+            rgba(20, 20, 20, 0.7),
+            rgba(20, 20, 20, 0.7),
+            rgba(20, 20, 20, 0.7),
             rgba(20, 20, 20, 0.8),
+            rgba(20, 20, 20, 0.9),
             rgba(20, 20, 20, 1)
             ),
             url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")`,
@@ -59,45 +60,57 @@ const MoviePage = () => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
-          ></div>
-
-          <div
-            className="moviePage__info relative mx-3 md:mx-20 lg:mx-48 p-4 md:p-10 shadow-xl rounded-lg text-white"
-            style={{ backgroundColor: "#141414" }}
           >
-            <div className="flex justify-between  items-start">
-              <h2 className="text-xl font-semibold">{movie.title}</h2>
-              <BookmarkBorderIcon></BookmarkBorderIcon>
-            </div>
-
-            <div className="flex items-center space-x-6 text-sm text-gray-300">
-              <div className="flex space-x-1 items-center">
-                <StarIcon></StarIcon>
-                <p>{movie.vote_average}</p>
-              </div>
-              <div className="flex space-x-1 items-center">
-                <p>{movie.release_date.substring(0, 4)}</p>
-              </div>
-              <div className="flex space-x-1 items-center">
-                <PeopleIcon></PeopleIcon>
-                <p>{movie.vote_count}</p>
-              </div>
-            </div>
-
-            <div className="mt-7">
-              <h5 className="font-medium">Generos</h5>
-              <div className="flex space-x-2 mt-2">
-                {movie.genres.map((genre) => (
-                  <p className="bg-slate-800 rounded-full text-xs py-2 px-4">
-                    {genre.name}
+            <div className="container mx-auto relative h-full">
+              <div className="xl:px-32 text-white absolute top-[40%] pb-20 px-1">
+                <h2 className="text-3xl lg:text-5xl font-semibold">
+                  {movie.title}
+                </h2>
+                <div className="flex items-center space-x-6 text-sm text-gray-100">
+                  <div className="flex space-x-1 items-center">
+                    <StarIcon></StarIcon>
+                    <p>{movie.vote_average}</p>
+                  </div>
+                  <div className="flex space-x-1 items-center">
+                    <PeopleIcon></PeopleIcon>
+                    <p>{movie.vote_count}</p>
+                  </div>
+                  <div className="flex space-x-1 items-center">
+                    <p className="font-semibold text-lg">
+                      {movie.release_date.substring(0, 4)}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex space-x-1 mt-2">
+                  {movie.genres.map((genre, index) => (
+                    <p
+                      className="border rounded-full text-xs py-2 px-4"
+                      key={index}
+                    >
+                      {genre.name}
+                    </p>
+                  ))}
+                </div>
+                {/* <p className="mt-3">{movie.tagline}</p> */}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={movie.homepage}
+                >
+                  <button className="flex items-center space-x-2 px-3 py-2 pr-4 bg-white rounded text-black hover:bg-gray-200 mt-8">
+                    <HomeIcon></HomeIcon>
+                    <p className="text-xs sm:text-sm md:text-base">
+                      Visitar pagina oficial
+                    </p>
+                  </button>
+                </a>
+                <div className="mt-16 px-2">
+                  <h3 className="text-lg font-semibold">Introduccion</h3>
+                  <p className="mt-2 text-sm">
+                    {movie.overview || "No hay informacion"}
                   </p>
-                ))}
+                </div>
               </div>
-            </div>
-
-            <div className="mt-7">
-              <h5 className="font-medium">Informacion</h5>
-              <p className="text-sm text-gray-300">{movie.overview}</p>
             </div>
           </div>
         </div>

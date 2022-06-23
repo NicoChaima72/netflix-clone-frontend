@@ -22,9 +22,11 @@ const SearchPage = () => {
     let isSuscribed = true;
     async function getMovies() {
       if (search.length > 2) {
+        setIsLoadingMovies(true);
         const results = await getMoviesByName(search);
         if (isSuscribed) {
           setMoviesSearch(results.results.data.results);
+          setIsLoadingMovies(false);
         }
       } else {
         setMoviesSearch([]);
@@ -32,6 +34,7 @@ const SearchPage = () => {
       }
     }
 
+    console.log({ search, isSuscribed });
     getMovies();
 
     return () => (isSuscribed = false);

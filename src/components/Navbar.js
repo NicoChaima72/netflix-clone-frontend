@@ -79,9 +79,6 @@ const Navbar = () => {
                     style={{ top: "2rem", backgroundColor: "#141414" }}
                     ref={ref}
                   >
-                    <p className="px-3 py-2 cursor-pointer hover:text-gray-300">
-                      Inicio
-                    </p>
                     <p className="px-3 py-2 hover:text-gray-300 cursor-no-drop">
                       Proximamente
                     </p>
