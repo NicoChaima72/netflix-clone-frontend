@@ -37,7 +37,7 @@ const Navbar = () => {
             : !isPageTop
             ? "navbar__solid"
             : ""
-        } navbar py-4 text-white fixed w-full z-50`}
+        } navbar py-4 text-white fixed w-full z-[1001]`}
         style={{ fontSize: "14px" }}
       >
         <div className="flex justify-between items-center container mx-auto">
