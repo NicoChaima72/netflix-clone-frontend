@@ -1,6 +1,6 @@
 import React from "react";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
+import ReactCarousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 import "./Carousel.css";
 import MovieCard from "./MovieCard";
@@ -12,21 +12,29 @@ const Carousel = ({
   },
 }) => {
   const responsive = {
-    0: { items: 3.5 },
-    568: { items: 5.5 },
-    1024: { items: 8.5 },
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 1024 },
+      items: 7.5,
+      slidesToSlide: 7,
+    },
+    desktop: {
+      breakpoint: { max: 1024, min: 768 },
+      items: 6.5,
+      slidesToSlide: 6,
+    },
+    tablet: {
+      breakpoint: { max: 768, min: 640 },
+      items: 4.5,
+      slidesToSlide: 4,
+    },
+    mobile: {
+      breakpoint: { max: 640, min: 0 },
+      items: 3.5,
+      slidesToSlide: 3,
+    },
   };
 
-  let items = data.results
-    .sort(() => Math.random() - 0.5)
-    .map((movie) => (
-      <MovieCard
-        movie={movie}
-        onDragStart={(e) => e.preventDefault()}
-      ></MovieCard>
-    ));
-
-  items = [...items, <div></div>, <div></div>];
+  let items = data.results.sort(() => Math.random() - 0.5);
 
   return (
     <div>
@@ -34,12 +42,22 @@ const Carousel = ({
         {genre}
       </h3>
       <div>
-        <AliceCarousel
-          className=""
-          mouseTracking
+        <ReactCarousel
+          swipeable={true}
+          draggable={true}
           responsive={responsive}
-          items={items}
-        />
+          infinite={true}
+          keyBoardControl={true}
+          transitionDuration={0}
+        >
+          {items.map((movie, index) => (
+            <MovieCard
+              movie={movie}
+              onDragStart={(e) => e.preventDefault()}
+              key={index}
+            ></MovieCard>
+          ))}
+        </ReactCarousel>
       </div>
     </div>
   );

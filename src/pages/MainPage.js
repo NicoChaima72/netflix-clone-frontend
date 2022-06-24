@@ -35,15 +35,17 @@ const MainPage = () => {
       ) : (
         <div>
           <Header movies={movies.discover}></Header>
-          <div className="main__container relative ml-4 md:ml-12">
+          <div className="main__container relative mx-4 md:mx-12">
             <section className="mb-5">
               <Carousel movies={movies.discover}></Carousel>
-              {movies.genres.map((moviesByGenre) => (
-                <Carousel
-                  movies={moviesByGenre}
-                  key={moviesByGenre.genre}
-                ></Carousel>
-              ))}
+              <div className="space-y-10 mt-10">
+                {movies.genres.map((moviesByGenre) => (
+                  <Carousel
+                    movies={moviesByGenre}
+                    key={moviesByGenre.genre}
+                  ></Carousel>
+                ))}
+              </div>
             </section>
           </div>
         </div>

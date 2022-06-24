@@ -15,6 +15,7 @@ const MovieCard = ({ movie, ...rest }) => {
           }
           alt=""
           role="presentation"
+          className="px-1"
           {...rest}
         />
       </div>
