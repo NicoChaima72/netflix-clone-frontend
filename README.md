@@ -25,4 +25,4 @@ After that you just have to write on the console
 
 ## Preview
 
-![Preview](https://lh4.googleusercontent.com/karYRurSFDsgLG6loTJthVggrZT0khstdntNVqOlOMB7asiSl_BcVyvnbnAjS5YNKqZthkSFQ9fR202PRW7Y=w2560-h1298-rw)
+![Preview](https://i.postimg.cc/Sxx8KhfY/2-1.png)
